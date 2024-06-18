@@ -10,6 +10,9 @@ const Images = {
     Icons2: require("../assets/Icons/Icons2.png"),
     Icons3: require("../assets/Icons/Icons3.png"),
     Icons4: require("../assets/Icons/Icons4.png"),
+    VectorHome: require("../assets/Home/VectorHome.png"),
+    Vectordown: require("../assets/Home/Vectordown.png"),
+    VectorUp: require("../assets/Home/VectorUp.png"),
   };
   export default Images;
   

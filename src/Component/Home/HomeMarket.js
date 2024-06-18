@@ -24,7 +24,7 @@ const HomeMarket = ({ navigation }) => {
           {/* Header Section */}
           <Text style={styles.headerText}>Hi, John</Text>
           <View style={styles.subHeaderContainer}>
-             <LinearGradient
+            <LinearGradient
               colors={["#A2D254", "#FFD300"]}
               start={{ x: 0, y: 0 }}
               end={{ x: 1, y: 0 }}
@@ -33,61 +33,328 @@ const HomeMarket = ({ navigation }) => {
               <Text style={styles.subHeaderText}>Explore</Text>
             </LinearGradient>
             <Text style={styles.subHeaderTextOne}>Markets</Text>
-            <Text style={styles.subHeaderTexttwo}>Portfolio</Text>
-            <Text style={styles.subHeaderTextthree}>More</Text>
+            <Text style={styles.subHeaderTextTwo}>Portfolio</Text>
+            <Text style={styles.subHeaderTextThree}onPress={() => navigation.navigate('HomeDashboard')}>More</Text>
           </View>
 
-          {/* Content Section */}
-          {/* <View style={styles.rectangleBox}></View>
-
-          <View style={styles.contentContainer}>
-            <Text style={styles.HeaderTextOne}>
-              a good article title here Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </Text>
-            <Text style={styles.subText}>crypto.news | 1 day ago</Text>
-          </View>
-
-          <View style={styles.secondTextContainer}>
-            <View style={styles.textContainer}>
-              <Text style={styles.secondText}>
-                a good article title here Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </Text>
-              <Text style={styles.thirdText}>crypto.news | 1 day ago</Text>
+          {/* Table Section */}
+          <View style={styles.tableContainer}>
+            <View style={styles.tableRow}>
+              <Text style={styles.tableHeaderText}>#</Text>
+              <Text style={styles.tableHeaderText}>Market Cap</Text>
+              <Text style={styles.tableHeaderText}>Price</Text>
+              <Text style={styles.tableHeaderText}>24h %</Text>
             </View>
-            <View style={styles.secondRectangle}></View>
-          </View>
-
-          <View style={styles.secondTextContainer}>
-            <View style={styles.textContainer}>
-              <Text style={styles.secondText}>
-                a good article title here Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </Text>
-              <Text style={styles.thirdText}>crypto.news | 1 day ago</Text>
+            <View style={styles.tableRow1}>
+              <Text style={styles.tableCellText}>1.</Text>
+              <View style={styles.tableImageTextContainer}>
+                  <View style={styles.circle}>
+                    <Image
+                      source={Images.VectorHome}
+                      style={styles.tableImage}
+                    />
+                  </View>
+                <View style={styles.textContainer}>
+                  <Text style={styles.tableImageText}>BTC</Text>
+                  <Text style={styles.tableSubText}>501.00B</Text>
+                </View>
+              </View>
+              <Text style={styles.tableCellText}>25,652.52</Text>
+              <View style={styles.tablePercentageContainer}>
+                <Image
+                  source={Images.Vectordown}
+                  style={styles.percentageImage}
+                />
+                <Text style={styles.tableCellTextRed}>0.65%</Text>
+              </View>
             </View>
-            <View style={styles.secondRectangle}></View>
-          </View>
-
-          <View style={styles.secondTextContainer}>
-            <View style={styles.textContainer}>
-              <Text style={styles.secondText}>
-                a good article title here Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </Text>
-              <Text style={styles.thirdText}>crypto.news | 1 day ago</Text>
+            
+            <View style={styles.tableRow2}>
+              <Text style={styles.tableCellText}>1.</Text>
+              <View style={styles.tableImageTextContainer}>
+                  <View style={styles.circle}>
+                    <Image
+                      source={Images.VectorHome}
+                      style={styles.tableImage}
+                    />
+                  </View>
+                <View style={styles.textContainer}>
+                  <Text style={styles.tableImageText}>BTC</Text>
+                  <Text style={styles.tableSubText}>501.00B</Text>
+                </View>
+              </View>
+              <Text style={styles.tableCellText}>25,652.52</Text>
+              <View style={styles.tablePercentageContainer}>
+                <Image
+                  source={Images.Vectordown}
+                  style={styles.percentageImage}
+                />
+                <Text style={styles.tableCellTextRed}>0.65%</Text>
+              </View>
             </View>
-            <View style={styles.secondRectangle}></View>
-          </View>
 
-          <View style={styles.secondTextContainer}>
-            <View style={styles.textContainer}>
-              <Text style={styles.secondText}>
-                a good article title here Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </Text>
-              <Text style={styles.thirdText}>crypto.news | 1 day ago</Text>
+            <View style={styles.tableRow2}>
+              <Text style={styles.tableCellText}>1.</Text>
+              <View style={styles.tableImageTextContainer}>
+                  <View style={styles.circle}>
+                    <Image
+                      source={Images.VectorHome}
+                      style={styles.tableImage}
+                    />
+                  </View>
+                <View style={styles.textContainer}>
+                  <Text style={styles.tableImageText}>BTC</Text>
+                  <Text style={styles.tableSubText}>501.00B</Text>
+                </View>
+              </View>
+              <Text style={styles.tableCellText}>25,652.52</Text>
+              <View style={styles.tablePercentageContainer}>
+                <Image
+                  source={Images.Vectordown}
+                  style={styles.percentageImage}
+                />
+                <Text style={styles.tableCellTextRed}>0.65%</Text>
+              </View>
             </View>
-            <View style={styles.secondRectangle}></View>
-          </View>
 
-          <View style={{ paddingBottom: 120 }}></View> */}
+            <View style={styles.tableRow2}>
+              <Text style={styles.tableCellText}>1.</Text>
+              <View style={styles.tableImageTextContainer}>
+                  <View style={styles.circle}>
+                    <Image
+                      source={Images.VectorHome}
+                      style={styles.tableImage}
+                    />
+                  </View>
+                <View style={styles.textContainer}>
+                  <Text style={styles.tableImageText}>BTC</Text>
+                  <Text style={styles.tableSubText}>501.00B</Text>
+                </View>
+              </View>
+              <Text style={styles.tableCellText}>25,652.52</Text>
+              <View style={styles.tablePercentageContainer}>
+                <Image
+                  source={Images.Vectordown}
+                  style={styles.percentageImage}
+                />
+                <Text style={styles.tableCellTextRed}>0.65%</Text>
+              </View>
+            </View>
+
+            <View style={styles.tableRow2}>
+              <Text style={styles.tableCellText}>1.</Text>
+              <View style={styles.tableImageTextContainer}>
+                  <View style={styles.circle}>
+                    <Image
+                      source={Images.VectorHome}
+                      style={styles.tableImage}
+                    />
+                  </View>
+                <View style={styles.textContainer}>
+                  <Text style={styles.tableImageText}>BTC</Text>
+                  <Text style={styles.tableSubText}>501.00B</Text>
+                </View>
+              </View>
+              <Text style={styles.tableCellText}>25,652.52</Text>
+              <View style={styles.tablePercentageContainer}>
+                <Image
+                  source={Images.Vectordown}
+                  style={styles.percentageImage}
+                />
+                <Text style={styles.tableCellTextRed}>0.65%</Text>
+              </View>
+            </View>
+
+            <View style={styles.tableRow2}>
+              <Text style={styles.tableCellText}>1.</Text>
+              <View style={styles.tableImageTextContainer}>
+                  <View style={styles.circle}>
+                    <Image
+                      source={Images.VectorHome}
+                      style={styles.tableImage}
+                    />
+                  </View>
+                <View style={styles.textContainer}>
+                  <Text style={styles.tableImageText}>BTC</Text>
+                  <Text style={styles.tableSubText}>501.00B</Text>
+                </View>
+              </View>
+              <Text style={styles.tableCellText}>25,652.52</Text>
+              <View style={styles.tablePercentageContainer}>
+                <Image
+                  source={Images.Vectordown}
+                  style={styles.percentageImage}
+                />
+                <Text style={styles.tableCellTextRed}>0.65%</Text>
+              </View>
+            </View>
+
+            <View style={styles.tableRow2}>
+              <Text style={styles.tableCellText}>1.</Text>
+              <View style={styles.tableImageTextContainer}>
+                  <View style={styles.circle}>
+                    <Image
+                      source={Images.VectorHome}
+                      style={styles.tableImage}
+                    />
+                  </View>
+                <View style={styles.textContainer}>
+                  <Text style={styles.tableImageText}>BTC</Text>
+                  <Text style={styles.tableSubText}>501.00B</Text>
+                </View>
+              </View>
+              <Text style={styles.tableCellText}>25,652.52</Text>
+              <View style={styles.tablePercentageContainer}>
+                <Image
+                  source={Images.Vectordown}
+                  style={styles.percentageImage}
+                />
+                <Text style={styles.tableCellTextRed}>0.65%</Text>
+              </View>
+            </View>
+
+            <View style={styles.tableRow2}>
+              <Text style={styles.tableCellText}>1.</Text>
+              <View style={styles.tableImageTextContainer}>
+                  <View style={styles.circle}>
+                    <Image
+                      source={Images.VectorHome}
+                      style={styles.tableImage}
+                    />
+                  </View>
+                <View style={styles.textContainer}>
+                  <Text style={styles.tableImageText}>BTC</Text>
+                  <Text style={styles.tableSubText}>501.00B</Text>
+                </View>
+              </View>
+              <Text style={styles.tableCellText}>25,652.52</Text>
+              <View style={styles.tablePercentageContainer}>
+                <Image
+                  source={Images.VectorUp}
+                  style={styles.percentageImage}
+                />
+                <Text style={styles.tableCellTextGreen}>0.65%</Text>
+              </View>
+            </View>
+
+            <View style={styles.tableRow2}>
+              <Text style={styles.tableCellText}>1.</Text>
+              <View style={styles.tableImageTextContainer}>
+                  <View style={styles.circle}>
+                    <Image
+                      source={Images.VectorHome}
+                      style={styles.tableImage}
+                    />
+                  </View>
+                <View style={styles.textContainer}>
+                  <Text style={styles.tableImageText}>BTC</Text>
+                  <Text style={styles.tableSubText}>501.00B</Text>
+                </View>
+              </View>
+              <Text style={styles.tableCellText}>25,652.52</Text>
+              <View style={styles.tablePercentageContainer}>
+                <Image
+                  source={Images.VectorUp}
+                  style={styles.percentageImage}
+                />
+                <Text style={styles.tableCellTextGreen}>0.65%</Text>
+              </View>
+            </View>
+
+            <View style={styles.tableRow2}>
+              <Text style={styles.tableCellText}>1.</Text>
+              <View style={styles.tableImageTextContainer}>
+                  <View style={styles.circle}>
+                    <Image
+                      source={Images.VectorHome}
+                      style={styles.tableImage}
+                    />
+                  </View>
+                <View style={styles.textContainer}>
+                  <Text style={styles.tableImageText}>BTC</Text>
+                  <Text style={styles.tableSubText}>501.00B</Text>
+                </View>
+              </View>
+              <Text style={styles.tableCellText}>25,652.52</Text>
+              <View style={styles.tablePercentageContainer}>
+                <Image
+                  source={Images.VectorUp}
+                  style={styles.percentageImage}
+                />
+                <Text style={styles.tableCellTextGreen}>0.65%</Text>
+              </View>
+            </View>
+            <View style={styles.tableRow2}>
+              <Text style={styles.tableCellText}>1.</Text>
+              <View style={styles.tableImageTextContainer}>
+                  <View style={styles.circle}>
+                    <Image
+                      source={Images.VectorHome}
+                      style={styles.tableImage}
+                    />
+                  </View>
+                <View style={styles.textContainer}>
+                  <Text style={styles.tableImageText}>BTC</Text>
+                  <Text style={styles.tableSubText}>501.00B</Text>
+                </View>
+              </View>
+              <Text style={styles.tableCellText}>25,652.52</Text>
+              <View style={styles.tablePercentageContainer}>
+                <Image
+                  source={Images.VectorUp}
+                  style={styles.percentageImage}
+                />
+                <Text style={styles.tableCellTextGreen}>0.65%</Text>
+              </View>
+            </View>
+            <View style={styles.tableRow2}>
+              <Text style={styles.tableCellText}>1.</Text>
+              <View style={styles.tableImageTextContainer}>
+                  <View style={styles.circle}>
+                    <Image
+                      source={Images.VectorHome}
+                      style={styles.tableImage}
+                    />
+                  </View>
+                <View style={styles.textContainer}>
+                  <Text style={styles.tableImageText}>BTC</Text>
+                  <Text style={styles.tableSubText}>501.00B</Text>
+                </View>
+              </View>
+              <Text style={styles.tableCellText}>25,652.52</Text>
+              <View style={styles.tablePercentageContainer}>
+                <Image
+                  source={Images.VectorUp}
+                  style={styles.percentageImage}
+                />
+                <Text style={styles.tableCellTextGreen}>0.65%</Text>
+              </View>
+            </View>
+            <View style={styles.tableRow2}>
+              <Text style={styles.tableCellText}>1.</Text>
+              <View style={styles.tableImageTextContainer}>
+                  <View style={styles.circle}>
+                    <Image
+                      source={Images.VectorHome}
+                      style={styles.tableImage}
+                    />
+                  </View>
+                <View style={styles.textContainer}>
+                  <Text style={styles.tableImageText}>BTC</Text>
+                  <Text style={styles.tableSubText}>501.00B</Text>
+                </View>
+              </View>
+              <Text style={styles.tableCellText}>25,652.52</Text>
+              <View style={styles.tablePercentageContainer}>
+                <Image
+                  source={Images.VectorUp}
+                  style={styles.percentageImage}
+                />
+                <Text style={styles.tableCellTextGreen}>0.65%</Text>
+              </View>
+            </View>
+
+          </View>
         </View>
       </ScrollView>
       <View style={styles.bottomRectangle}>
@@ -105,31 +372,27 @@ const HomeMarket = ({ navigation }) => {
           />
           <Text style={styles.iconText}>Staking</Text>
         </View>
-
-        <View style={styles.iconContainerone}>
+        <View style={styles.iconContainerOne}>
           <Image
             source={Images.Icons3}
-            style={styles.iconImageone}
+            style={styles.iconImageOne}
           />
-          <Text style={styles.iconTextone}>Fixed Returns</Text>
+          <Text style={styles.iconTextOne}>Fixed Returns</Text>
         </View>
-
-        <View style={styles.iconContainertwo}>
+        <View style={styles.iconContainerTwo}>
           <Image
             source={Images.Icons2}
-            style={styles.iconImagetwo}
+            style={styles.iconImageTwo}
           />
-          <Text style={styles.iconTexttwo}>Loans</Text>
+          <Text style={styles.iconTextTwo}>Loans</Text>
         </View>
-
-        <View style={styles.iconContainerthree}>
+        <View style={styles.iconContainerThree}>
           <Image
             source={Images.Icons1}
-            style={styles.iconImagethree}
+            style={styles.iconImageThree}
           />
-          <Text style={styles.iconTextthree}>Strategies</Text>
+          <Text style={styles.iconTextThree}>Strategies</Text>
         </View>
-
       </View>
     </SafeAreaView>
   );
@@ -159,32 +422,6 @@ const styles = StyleSheet.create({
     color: "#FFFFFF",
     marginTop: 10,
   },
-  HeaderTextOne: {
-    fontFamily: "Inter",
-    fontSize: 12,
-    fontWeight: "500",
-    lineHeight: 18,
-    textAlign: "left",
-    color: "#FFFFFF",
-    width: 254,
-    height: 36,
-    paddingHorizontal: 3,
-    paddingTop: 1,
-    marginBottom: 10,
-  },
-  subText: {
-    fontFamily: "Inter",
-    fontSize: 10,
-    fontWeight: "500",
-    lineHeight: 18,
-    textAlign: "left",
-    color: "#575757",
-    width: 114,
-    height: 18,
-    paddingHorizontal: 1,
-    paddingTop: 1,
-    marginBottom: 10,
-  },
   subHeaderContainer: {
     width: 320,
     height: 28,
@@ -203,7 +440,7 @@ const styles = StyleSheet.create({
     width: 36,
     height: 18,
     top: 1,
-    left: 4,    
+    left: 4,
   },
   subHeaderTextOne: {
     fontFamily: "Inter",
@@ -216,8 +453,8 @@ const styles = StyleSheet.create({
     height: 18,
     top: 7,
     left: 108,
-    },
-  subHeaderTexttwo: {
+  },
+  subHeaderTextTwo: {
     fontFamily: "Inter",
     fontSize: 10,
     fontWeight: "500",
@@ -228,8 +465,8 @@ const styles = StyleSheet.create({
     height: 18,
     top: -10,
     left: 199,
-    },
-  subHeaderTextthree: {
+  },
+  subHeaderTextThree: {
     fontFamily: "Inter",
     fontSize: 10,
     fontWeight: "500",
@@ -241,51 +478,99 @@ const styles = StyleSheet.create({
     top: -28,
     left: 290,
   },
-  rectangleBox: {
-    backgroundColor: "#1E1E1E",
-    borderRadius: 7,
-    marginBottom: 30,
-    width: 320,
-    height: 129,
-    top: 18,
+  tableContainer: {
+    width: 337,
+    marginTop: 20,
   },
-  contentContainer: {
-    flexDirection: "column",
-    alignItems: "center",
-    marginBottom: 10,
-    alignItems: "flex-start",
-  },
-  secondTextContainer: {
+  tableRow: {
     flexDirection: "row",
+    justifyContent: "space-around",
     alignItems: "center",
-    marginBottom: 20,
+    height: 18,
   },
-  secondRectangle: {
-    width: 72,
-    height: 72,
-    backgroundColor: "#1E1E1E",
-    borderRadius: 7,
-    marginLeft: 10,
+  tableRow1: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+    height: 28,
+    marginTop:10
   },
-  textContainer: {
-    flex: 1,
+  tableRow2: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+    height: 28,
+    marginTop:10
   },
-  secondText: {
-    fontFamily: "Inter",
-    fontSize: 12,
-    fontWeight: "500",
-    lineHeight: 18,
-    textAlign: "left",
-    color: "#FFFFFF",
-    marginRight: 10,
-  },
-  thirdText: {
+  tableHeaderText: {
     fontFamily: "Inter",
     fontSize: 10,
-    fontWeight: "500",
+    fontWeight: "400",
     lineHeight: 18,
-    textAlign: "left",
+    textAlign: "center",
     color: "#575757",
+  },
+  tableCellText: {
+    fontFamily: "Inter",
+    fontSize: 14,
+    fontWeight: "400",
+    lineHeight: 18,
+    textAlign: "center",
+    color: "#FFFFFF",
+  },
+  tableCellTextRed: {
+    fontFamily: "Inter",
+    fontSize: 14,
+    fontWeight: "400",
+    lineHeight: 18,
+    textAlign: "center",
+    color: "#D92D20",
+  },
+  tableCellTextGreen: {
+    fontFamily: "Inter",
+    fontSize: 14,
+    fontWeight: "400",
+    lineHeight: 18,
+    textAlign: "center",
+    color: "#12B76A",
+  },
+  tableImageTextContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+
+  },
+  tableImage: {
+    width: 7,
+    height: 7,
+    marginTop: -3
+  },
+  tableImageText: {
+    fontFamily: "Inter",
+    fontSize: 14,
+    fontWeight: "400",
+    lineHeight: 18,
+    textAlign: "center",
+    color: "#FFFFFF",
+  },
+  tableSubText: {
+    width: 60,
+    height: 18,
+    fontFamily: "Inter",
+    fontSize: 10,
+    fontWeight: "400",
+    lineHeight: 18,
+    textAlign: "center",
+    color: "#575757",
+  },
+  tablePercentageContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  percentageImage: {
+    width: 6.88,
+    height: 3.75,
+    marginRight: 1.56,
   },
   bottomRectangle: {
     width: "100%",
@@ -309,7 +594,7 @@ const styles = StyleSheet.create({
   bottomImage: {
     width: 40,
     height: 26,
-    resizeMode: "contain", 
+    resizeMode: "contain",
     zIndex: 1,
   },
   ellipse: {
@@ -349,9 +634,9 @@ const styles = StyleSheet.create({
     width: 48,
     height: 18,
     top: 10,
-    left: 3
+    left: 3,
   },
-  iconContainerone: {
+  iconContainerOne: {
     alignItems: "center",
     position: "absolute",
     width: 65,
@@ -359,24 +644,24 @@ const styles = StyleSheet.create({
     top: 13,
     left: 92,
   },
-  iconImageone: {
+  iconImageOne: {
     width: 14.63,
     height: 12.38,
     top: 2.81,
     left: 1.69,
   },
-  iconTextone: {
+  iconTextOne: {
     width: 65,
     height: 18,
     top: 10,
     left: 13,
     fontFamily: "Inter",
     fontSize: 10,
-    fontweight: 400,
+    fontWeight: "400",
     lineHeight: 18,
     color: "#FFFFFF",
   },
-  iconContainertwo: {
+  iconContainerTwo: {
     alignItems: "center",
     position: "absolute",
     top: 13,
@@ -385,46 +670,51 @@ const styles = StyleSheet.create({
     top: 13,
     left: 246,
   },
-  iconImagetwo: {
+  iconImageTwo: {
     width: 16.88,
     height: 13.5,
     top: 1.69,
     left: 1.69,
   },
-  iconTexttwo: {
+  iconTextTwo: {
     width: 65,
     height: 18,
     top: 10,
     left: 13,
     fontFamily: "Inter",
     fontSize: 10,
-    fontweight: 400,
+    fontWeight: "400",
     lineHeight: 18,
     color: "#FFFFFF",
   },
-  iconContainerthree: {
+  iconContainerThree: {
     alignItems: "center",
     position: "absolute",
     top: 13,
     width: 49,
     height: 38,
     top: 13,
-    left: 305
+    left: 305,
   },
-  iconImagethree: {
+  iconImageThree: {
     width: 13.5,
     height: 13.5,
     top: 2.25,
     left: 2.25,
   },
-  iconTextthree: {
+  textContainer: {
+    flexDirection: "column",
+    marginTop: 5
+
+  },
+  iconTextThree: {
     width: 65,
     height: 18,
     top: 10,
     left: 13,
     fontFamily: "Inter",
     fontSize: 10,
-    fontweight: 400,
+    fontWeight: "400",
     lineHeight: 18,
     color: "#FFFFFF",
   },
@@ -439,6 +729,19 @@ const styles = StyleSheet.create({
     height: 25,
     top: 26,
     left: 10,
+  },
+  circleContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 20,
+  },
+  circle: {
+    width: 12,
+    height: 12,
+    borderRadius: 6,
+    backgroundColor: "#F9AA4B",
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
 

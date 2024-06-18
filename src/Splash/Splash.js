@@ -60,16 +60,14 @@ const styles = StyleSheet.create({
     color: '#000000',
   },
   line: {
-    fontFamily: 'Inter',
-    fontSize: 36,
     fontWeight: '600',
+    fontSize: 36,
     lineHeight: 44,
     letterSpacing: -0.02,
     textAlign: 'center',
     color: '#000000' ,
   },
   lineSimple: {
-    fontFamily: 'Inter',
     fontSize: 36,
     fontWeight: '600',
     lineHeight: 44,
@@ -79,7 +77,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   subtitle: {
-    fontFamily: 'Inter',
     fontSize: 16,
     fontWeight: '500',
     lineHeight: 24,
@@ -101,10 +98,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#000000',
     borderRadius: 18,
     width: 125,
-    height: 40,
+    height: 42,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 20,
+    marginTop: 18,
   },
   buttonText: {
     color: '#FFFFFF',
