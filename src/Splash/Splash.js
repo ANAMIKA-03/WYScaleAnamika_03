@@ -18,8 +18,7 @@ const Splash = ({ navigation }) => {
         <Image source={Images.Vector} style={styles.logoIcon} />
         <View style={styles.textContainer}>
           <Text style={styles.title}>
-            <Text style={styles.line}>Investing in crypto{'\n'}</Text>
-            <Text style={styles.line}>mutual funds.{'\n'}</Text>
+            <Text style={styles.line}>Investing in Crypto{'\n'}</Text>
             <Text style={styles.lineSimple}>Simplified.</Text>
           </Text>
           <Text style={styles.subtitle}>Web3 and transparent hassle-free{"\n"} DEFI investing option.</Text>
