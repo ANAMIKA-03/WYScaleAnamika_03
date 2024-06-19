@@ -7,10 +7,13 @@ import {
   StyleSheet,
   ScrollView,
   Image,
+  Dimensions,
 } from "react-native";
 import Colors from "../../Styles/Colors";
 import Images from "../../Styles/Images";
 import LinearGradient from 'react-native-linear-gradient';
+
+const { width: screenWidth, height: screenHeight } = Dimensions.get("window");
 
 const HomeExplore = ({ navigation }) => {
   return (
@@ -24,7 +27,7 @@ const HomeExplore = ({ navigation }) => {
           {/* Header Section */}
           <Text style={styles.headerText}>Hi, John</Text>
           <View style={styles.subHeaderContainer}>
-             <LinearGradient
+            <LinearGradient
               colors={["#A2D254", "#FFD300"]}
               start={{ x: 0, y: 0 }}
               end={{ x: 1, y: 0 }}
@@ -33,59 +36,31 @@ const HomeExplore = ({ navigation }) => {
               <Text style={styles.subHeaderText}>Explore</Text>
             </LinearGradient>
             <Text style={styles.subHeaderTextOne} onPress={() => navigation.navigate('HomeMarket')}>Markets</Text>
-            <Text style={styles.subHeaderTexttwo}>Portfolio</Text>
-            <Text style={styles.subHeaderTextthree}>More</Text>
+            <Text style={styles.subHeaderTextTwo}>Portfolio</Text>
+            <Text style={styles.subHeaderTextThree}>More</Text>
           </View>
 
           {/* Content Section */}
           <View style={styles.rectangleBox}></View>
 
           <View style={styles.contentContainer}>
-            <Text style={styles.HeaderTextOne}>
-              a good article title here Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            <Text style={styles.headerTextOne}>
+              A good article title here Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </Text>
             <Text style={styles.subText}>crypto.news | 1 day ago</Text>
           </View>
 
-          <View style={styles.secondTextContainer}>
-            <View style={styles.textContainer}>
-              <Text style={styles.secondText}>
-                a good article title here Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </Text>
-              <Text style={styles.thirdText}>crypto.news | 1 day ago</Text>
+          {Array(4).fill().map((_, index) => (
+            <View style={styles.secondTextContainer} key={index}>
+              <View style={styles.textContainer}>
+                <Text style={styles.secondText}>
+                  A good article title here Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </Text>
+                <Text style={styles.thirdText}>crypto.news | 1 day ago</Text>
+              </View>
+              <View style={styles.secondRectangle}></View>
             </View>
-            <View style={styles.secondRectangle}></View>
-          </View>
-
-          <View style={styles.secondTextContainer}>
-            <View style={styles.textContainer}>
-              <Text style={styles.secondText}>
-                a good article title here Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </Text>
-              <Text style={styles.thirdText}>crypto.news | 1 day ago</Text>
-            </View>
-            <View style={styles.secondRectangle}></View>
-          </View>
-
-          <View style={styles.secondTextContainer}>
-            <View style={styles.textContainer}>
-              <Text style={styles.secondText}>
-                a good article title here Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </Text>
-              <Text style={styles.thirdText}>crypto.news | 1 day ago</Text>
-            </View>
-            <View style={styles.secondRectangle}></View>
-          </View>
-
-          <View style={styles.secondTextContainer}>
-            <View style={styles.textContainer}>
-              <Text style={styles.secondText}>
-                a good article title here Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </Text>
-              <Text style={styles.thirdText}>crypto.news | 1 day ago</Text>
-            </View>
-            <View style={styles.secondRectangle}></View>
-          </View>
+          ))}
 
           <View style={{ paddingBottom: 120 }}></View>
         </View>
@@ -106,28 +81,28 @@ const HomeExplore = ({ navigation }) => {
           <Text style={styles.iconText}>Staking</Text>
         </View>
 
-        <View style={styles.iconContainerone}>
+        <View style={styles.iconContainerOne}>
           <Image
             source={Images.Icons3}
-            style={styles.iconImageone}
+            style={styles.iconImageOne}
           />
-          <Text style={styles.iconTextone}>Fixed Returns</Text>
+          <Text style={styles.iconTextOne}>Fixed Returns</Text>
         </View>
 
-        <View style={styles.iconContainertwo}>
+        <View style={styles.iconContainerTwo}>
           <Image
             source={Images.Icons2}
-            style={styles.iconImagetwo}
+            style={styles.iconImageTwo}
           />
-          <Text style={styles.iconTexttwo}>Loans</Text>
+          <Text style={styles.iconTextTwo}>Loans</Text>
         </View>
 
-        <View style={styles.iconContainerthree}>
+        <View style={styles.iconContainerThree}>
           <Image
             source={Images.Icons1}
-            style={styles.iconImagethree}
+            style={styles.iconImageThree}
           />
-          <Text style={styles.iconTextthree}>Strategies</Text>
+          <Text style={styles.iconTextThree}>Strategies</Text>
         </View>
 
       </View>
@@ -147,149 +122,130 @@ const styles = StyleSheet.create({
   mainContainer: {
     width: "100%",
     alignItems: "flex-start",
-    paddingHorizontal: 20,
+    paddingHorizontal: screenWidth * 0.05,
     paddingTop: StatusBar.currentHeight || 10,
   },
   headerText: {
     fontFamily: "Inter",
-    fontSize: 20,
+    fontSize: screenWidth * 0.05,
     fontWeight: "500",
-    lineHeight: 28,
+    lineHeight: screenWidth * 0.07,
     textAlign: "left",
     color: "#FFFFFF",
-    marginTop: 10,
+    marginTop: screenHeight * 0.01,
   },
-  HeaderTextOne: {
+  headerTextOne: {
     fontFamily: "Inter",
-    fontSize: 12,
+    fontSize: screenWidth * 0.03,
     fontWeight: "500",
-    lineHeight: 18,
+    lineHeight: screenWidth * 0.04,
     textAlign: "left",
     color: "#FFFFFF",
-    width: 254,
-    height: 36,
-    paddingHorizontal: 3,
-    paddingTop: 1,
-    marginBottom: 10,
+    width: screenWidth * 0.9,
+    marginBottom: screenHeight * 0.01,
   },
   subText: {
     fontFamily: "Inter",
-    fontSize: 10,
+    fontSize: screenWidth * 0.025,
     fontWeight: "500",
-    lineHeight: 18,
+    lineHeight: screenWidth * 0.04,
     textAlign: "left",
     color: "#575757",
-    width: 114,
-    height: 18,
-    paddingHorizontal: 1,
-    paddingTop: 1,
-    marginBottom: 10,
+    width: screenWidth * 0.4,
+    marginBottom: screenHeight * 0.01,
   },
   subHeaderContainer: {
-    width: 320,
-    height: 28,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: screenWidth * 0.9,
+    height: screenHeight * 0.04,
     borderRadius: 7,
     backgroundColor: "#1E1E1E",
-    justifyContent: "center",
-    marginTop: 10,
+    marginTop: screenHeight * 0.01,
+    paddingHorizontal: screenWidth * 0.02,
   },
   subHeaderText: {
     fontFamily: "Inter",
-    fontSize: 10,
+    fontSize: screenWidth * 0.025,
     fontWeight: "500",
-    lineHeight: 18,
+    lineHeight: screenWidth * 0.04,
     textAlign: "center",
     color: "#FFFFFF",
-    width: 36,
-    height: 18,
-    top: 1,
-    left: 4,    
   },
   subHeaderTextOne: {
     fontFamily: "Inter",
-    fontSize: 10,
+    fontSize: screenWidth * 0.025,
     fontWeight: "500",
-    lineHeight: 18,
+    lineHeight: screenWidth * 0.04,
     textAlign: "center",
     color: "#FFFFFF",
-    width: 39,
-    height: 18,
-    top: 7,
-    left: 108,
-    },
-  subHeaderTexttwo: {
+  },
+  subHeaderTextTwo: {
     fontFamily: "Inter",
-    fontSize: 10,
+    fontSize: screenWidth * 0.025,
     fontWeight: "500",
-    lineHeight: 18,
+    lineHeight: screenWidth * 0.04,
     textAlign: "center",
     color: "#FFFFFF",
-    width: 41,
-    height: 18,
-    top: -10,
-    left: 199,
-    },
-  subHeaderTextthree: {
+  },
+  subHeaderTextThree: {
     fontFamily: "Inter",
-    fontSize: 10,
+    fontSize: screenWidth * 0.025,
     fontWeight: "500",
-    lineHeight: 18,
+    lineHeight: screenWidth * 0.04,
     textAlign: "center",
     color: "#FFFFFF",
-    width: 25,
-    height: 18,
-    top: -28,
-    left: 290,
   },
   rectangleBox: {
     backgroundColor: "#1E1E1E",
     borderRadius: 7,
-    marginBottom: 30,
-    width: 320,
-    height: 129,
-    top: 18,
+    marginBottom: screenHeight * 0.03,
+    marginTop: screenHeight * 0.03,
+    width: screenWidth * 0.9,
+    height: screenHeight * 0.2,
   },
   contentContainer: {
     flexDirection: "column",
     alignItems: "center",
-    marginBottom: 10,
+    marginBottom: screenHeight * 0.01,
     alignItems: "flex-start",
   },
   secondTextContainer: {
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 20,
+    marginBottom: screenHeight * 0.02,
   },
   secondRectangle: {
-    width: 72,
-    height: 72,
+    width: screenWidth * 0.18,
+    height: screenWidth * 0.18,
     backgroundColor: "#1E1E1E",
     borderRadius: 7,
-    marginLeft: 10,
+    marginLeft: screenWidth * 0.02,
   },
   textContainer: {
     flex: 1,
   },
   secondText: {
     fontFamily: "Inter",
-    fontSize: 12,
+    fontSize: screenWidth * 0.03,
     fontWeight: "500",
-    lineHeight: 18,
+    lineHeight: screenWidth * 0.04,
     textAlign: "left",
     color: "#FFFFFF",
-    marginRight: 10,
+    marginRight: screenWidth * 0.02,
   },
   thirdText: {
     fontFamily: "Inter",
-    fontSize: 10,
+    fontSize: screenWidth * 0.025,
     fontWeight: "500",
-    lineHeight: 18,
+    lineHeight: screenWidth * 0.04,
     textAlign: "left",
     color: "#575757",
   },
   bottomRectangle: {
     width: "100%",
-    height: 70,
+    height: screenHeight * 0.1,
     backgroundColor: "#1E1E1E",
     position: "absolute",
     bottom: 0,
@@ -300,145 +256,127 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     position: "relative",
-    width: 56,
-    height: 56,
-    top: -27,
+    width: screenWidth * 0.15,
+    height: screenWidth * 0.15,
+    top: -screenHeight * 0.05,
     justifyContent: "center",
     alignItems: "center",
   },
   bottomImage: {
-    width: 40,
-    height: 26,
-    resizeMode: "contain", 
+    width: screenWidth * 0.1,
+    height: screenWidth * 0.065,
+    resizeMode: "contain",
     zIndex: 1,
   },
   ellipse: {
     position: "absolute",
-    width: 56,
-    height: 28,
-    borderRadius: 28,
+    width: screenWidth * 0.15,
+    height: screenHeight * 0.05,
+    borderRadius: screenWidth * 0.075,
     borderBottomLeftRadius: 0,
     borderBottomRightRadius: 0,
     borderWidth: 1,
     borderColor: "#1E1E1E",
     backgroundColor: "#1E1E1E",
-    top: 2,
-    left: 1,
+    top: screenHeight * 0.005,
+    left: screenWidth * 0.005,
   },
   iconContainer: {
     alignItems: "center",
     position: "absolute",
-    width: 32,
-    height: 38,
-    top: 11,
-    left: 27,
+    width: screenWidth * 0.1,
+    height: screenHeight * 0.05,
+    top: screenHeight * 0.015,
+    left: screenWidth * 0.1,
   },
   iconImage: {
-    width: 14,
-    height: 15,
+    width: screenWidth * 0.04,
+    height: screenHeight * 0.02,
     resizeMode: "cover",
-    top: 4,
-    left: 1.69,
+    top: screenHeight * 0.005,
+    left: screenWidth * 0.005,
   },
   iconText: {
     fontFamily: "Inter",
-    fontSize: 10,
+    fontSize: screenWidth * 0.025,
     fontWeight: "400",
-    lineHeight: 18,
+    lineHeight: screenWidth * 0.07,
     color: "#FFFFFF",
-    width: 48,
-    height: 18,
-    top: 10,
-    left: 3
+    textAlign: "center",
   },
-  iconContainerone: {
+  iconContainerOne: {
     alignItems: "center",
     position: "absolute",
-    width: 65,
-    height: 38,
-    top: 13,
-    left: 92,
+    width: screenWidth * 0.15,
+    height: screenHeight * 0.05,
+    top: screenHeight * 0.015,
+    left: screenWidth * 0.25,
   },
-  iconImageone: {
-    width: 14.63,
-    height: 12.38,
-    top: 2.81,
-    left: 1.69,
+  iconImageOne: {
+    width: screenWidth * 0.04,
+    height: screenHeight * 0.02,
+    top: screenHeight * 0.005,
+    left: screenWidth * 0.005,
   },
-  iconTextone: {
-    width: 65,
-    height: 18,
-    top: 10,
-    left: 13,
+  iconTextOne: {
     fontFamily: "Inter",
-    fontSize: 10,
-    fontweight: 400,
-    lineHeight: 18,
+    fontSize: screenWidth * 0.024,
+    fontWeight: "400",
+    lineHeight: screenWidth * 0.07,
     color: "#FFFFFF",
+    textAlign: "center",
+    flexWrap: 'wrap',
   },
-  iconContainertwo: {
+  iconContainerTwo: {
     alignItems: "center",
     position: "absolute",
-    top: 13,
-    width: 29,
-    height: 38,
-    top: 13,
-    left: 246,
+    width: screenWidth * 0.1,
+    height: screenHeight * 0.05,
+    top: screenHeight * 0.015,
+    left: screenWidth * 0.65,
   },
-  iconImagetwo: {
-    width: 16.88,
-    height: 13.5,
-    top: 1.69,
-    left: 1.69,
+  iconImageTwo: {
+    width: screenWidth * 0.04,
+    height: screenHeight * 0.02,
+    top: screenHeight * 0.005,
+    left: screenWidth * 0.005,
   },
-  iconTexttwo: {
-    width: 65,
-    height: 18,
-    top: 10,
-    left: 13,
+  iconTextTwo: {
     fontFamily: "Inter",
-    fontSize: 10,
-    fontweight: 400,
-    lineHeight: 18,
+    fontSize: screenWidth * 0.025,
+    fontWeight: "400",
+    lineHeight: screenWidth * 0.07,
     color: "#FFFFFF",
+    textAlign: "center",
   },
-  iconContainerthree: {
+  iconContainerThree: {
     alignItems: "center",
     position: "absolute",
-    top: 13,
-    width: 49,
-    height: 38,
-    top: 13,
-    left: 305
+    width: screenWidth * 0.15,
+    height: screenHeight * 0.05,
+    top: screenHeight * 0.015,
+    left: screenWidth * 0.8,
   },
-  iconImagethree: {
-    width: 13.5,
-    height: 13.5,
-    top: 2.25,
-    left: 2.25,
+  iconImageThree: {
+    width: screenWidth * 0.04,
+    height: screenHeight * 0.02,
+    top: screenHeight * 0.005,
+    left: screenWidth * 0.005,
   },
-  iconTextthree: {
-    width: 65,
-    height: 18,
-    top: 10,
-    left: 13,
+  iconTextThree: {
     fontFamily: "Inter",
-    fontSize: 10,
-    fontweight: 400,
-    lineHeight: 18,
+    fontSize: screenWidth * 0.025,
+    fontWeight: "400",
+    lineHeight: screenWidth * 0.07,
     color: "#FFFFFF",
+    textAlign: "center",
   },
   gradientBackground: {
-    width: 73,
-    height: 28,
+    width: screenWidth * 0.2,
+    height: screenHeight * 0.04,
     borderRadius: 7,
     justifyContent: "center",
     alignItems: "center",
-    marginLeft: 1,
-    width: 79,
-    height: 25,
-    top: 26,
-    left: 10,
   },
 });
 

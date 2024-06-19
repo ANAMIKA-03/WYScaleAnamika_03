@@ -35,7 +35,7 @@ const flatListData = [
     }
 ];
 
-const HomeDashboard = ({ navigation }) => {
+const DashboardDeposit = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.backgroundWrapper}>
             <StatusBar barStyle={"light-content"} backgroundColor={Colors.Black} />
@@ -57,7 +57,7 @@ const HomeDashboard = ({ navigation }) => {
                         </LinearGradient>
                         <Text style={styles.subHeaderTextOne} onPress={() => navigation.navigate('HomeMarket')}>Markets</Text>
                         <Text style={styles.subHeaderTextTwo}>Portfolio</Text>
-                        <Text style={styles.subHeaderTextThree} onPress={() => navigation.navigate('HomeDashboard')}>More</Text>
+                        <Text style={styles.subHeaderTextThree} onPress={() => navigation.navigate('DashboardDeposit')}>More</Text>
                     </View>
 
                     {/* Horizontal Scrollable Row */}
@@ -99,90 +99,7 @@ const HomeDashboard = ({ navigation }) => {
                         </View>
                     </ScrollView>
 
-                    <View style={styles.grayRectangle}>
-                        <View style={styles.valueContainerone}>
-                            <Text style={styles.currentValueText}>Current value</Text>
-                            <Text style={styles.currentValueAmount}>$ 20,000</Text>
-                        </View>
-
-
-
-                         <View style={styles.amountContainerInv}>
-                            <Text style={styles.currentValueAmountInv}>Invested</Text>
-                            <Text style={styles.gainsAmountInv}>$ 18,500</Text>
-                        </View>
-
-                        <View style={styles.amountContainerGain}>
-                            <Text style={[styles.currentValueAmountGain, { textAlign: 'left' }]}>Gains</Text>
-                            <Text style={[styles.gainsAmount, { textAlign: 'right' }]}>+ $ 1,500</Text>
-                        </View> 
-                        
-                       
-                    </View>
-                    <View style={styles.grayRectangleRow}>
-                        <View style={styles.grayRectangleSmaller}>
-                            <View style={styles.valueContainer}>
-                                <Text style={styles.currentValueActive}>Active SIP</Text>
-                                <Text style={styles.gainsTextRs}>$ 100 / month</Text>
-                            </View>
-                        </View>
-                        <View style={styles.grayRectangleSmaller}>
-                            <View style={styles.valueContainer}>
-                                <Text style={styles.currentValueActive}>Earned referrals</Text>
-                                <Text style={styles.gainsTextRs}>$ 0 USDT</Text>
-                            </View>
-                        </View>
-                    </View>
-                    <View style={styles.grayRectangleRow}>
-                        <View style={styles.grayRectangleSmaller}>
-                            <View style={styles.valueContainer}>
-                                <Text style={styles.currentValueActive}>Total yield</Text>
-                                <Text style={styles.gainsTextRs}>10%</Text>
-                            </View>
-                        </View>
-                        <View style={styles.grayRectangleSmaller}>
-                            <View style={styles.valueContainer}>
-                                <Text style={styles.currentValueActive}>Withdraw amount available</Text>
-                                <Text style={styles.gainsTextRs}>$ 0 USDT</Text>
-                            </View>
-                        </View>
-                    </View>
-
-                    <View style={styles.textContainer}>
-                        <Text style={styles.textOne}>Top performing strategies</Text>
-                    </View>
-
-                    <FlatList
-                        data={flatListData}
-                        horizontal
-                        keyExtractor={(item) => item.key}
-                        style={styles.flatListContainer}
-                        renderItem={({ item }) => (
-                            <View style={styles.scrollableRectangle}>
-                                <View style={styles.smallrect}>
-                                    <Text style={styles.rectangleTitle}>{item.title}</Text>
-                                </View>
-
-                                <Text style={styles.rectangleDescription}>{item.description}</Text>
-
-                                <View style={styles.check}>
-                                    <Image
-                                        source={item.image}
-                                        style={styles.percentageImage}
-                                    />
-                                    <Text style={styles.incep}>{item.sinceInception}</Text>
-                                </View>
-
-                                <View style={styles.checktwo}>
-                                    <Image
-                                        source={item.image}
-                                        style={styles.percentageImage}
-                                    />
-                                    <Text style={styles.milli}>{item.returns}</Text>
-                                </View>
-                            </View>
-                        )}
-                    />
+                    
 
                     <View style={{ paddingBottom: screenHeight * 0.15 }}></View>
                 </View>
@@ -655,4 +572,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default HomeDashboard;
+export default DashboardDeposit;

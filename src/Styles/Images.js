@@ -13,6 +13,12 @@ const Images = {
     VectorHome: require("../assets/Home/VectorHome.png"),
     Vectordown: require("../assets/Home/Vectordown.png"),
     VectorUp: require("../assets/Home/VectorUp.png"),
+    home: require("../assets/Home/home.png"),
+    wallet: require("../assets/Home/wallet.png"),
+    coins: require("../assets/Home/coins.png"),
+    piggybank: require("../assets/Home/piggybank.png"),
+    hearthandshake: require("../assets/Home/hearthandshake.png"),
+
   };
   export default Images;
   
