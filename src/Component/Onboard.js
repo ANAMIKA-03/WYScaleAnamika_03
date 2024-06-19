@@ -1,7 +1,9 @@
 import React from 'react';
-import { SafeAreaView, StatusBar, View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { SafeAreaView, StatusBar, View, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Colors from '../Styles/Colors';
+
+const { width, height } = Dimensions.get('window');
 
 const Onboard = ({ navigation }) => {
   return (
@@ -24,7 +26,7 @@ const Onboard = ({ navigation }) => {
           <View style={styles.nestedRectangle}></View>
           <View style={styles.textContainer}>
             <Text style={styles.nestedTextOneI}>Independent Investor</Text>
-            <Text style={styles.nestedTextTwoo}>I’m looking for investments solutions and educating myself.</Text>
+            <Text style={styles.nestedTextTwoo}>I’m looking for investment solutions and educating myself.</Text>
           </View>
         </View>
         <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
@@ -49,113 +51,106 @@ const styles = StyleSheet.create({
   },
   mainContainer: {
     flex: 1,
-    marginTop: 80,
+    marginTop: height * 0.1,
     alignItems: 'center',
-    position: 'relative',
+    paddingHorizontal: width * 0.05,
   },
   line: {
     fontFamily: 'Inter',
-    fontSize: 19,
+    fontSize: width * 0.05,
     fontWeight: '500',
-    lineHeight: 30,
+    lineHeight: width * 0.075,
     textAlign: 'center',
     color: "#FFFFFF",
   },
   lineTwo: {
     fontFamily: 'Inter',
-    fontSize: 14,
+    fontSize: width * 0.035,
     fontWeight: '400',
-    lineHeight: 20,
+    lineHeight: width * 0.05,
     textAlign: 'center',
     color: "#575757",
-    marginTop: 10,
+    marginTop: height * 0.01,
   },
   rectangularDiv: {
-    width: 335,
-    height: 147,
+    width: width * 0.9,
+    height: height * 0.2,
     backgroundColor: '#1D1D1D',
     borderRadius: 15,
-    marginTop: 30,
+    marginTop: height * 0.03,
     flexDirection: 'row',
-    paddingLeft: 29,
+    paddingLeft: width * 0.07,
     alignItems: 'center',
-
   },
   rectangularDivOne: {
-    width: 335,
-    height: 147,
+    width: width * 0.9,
+    height: height * 0.2,
     backgroundColor: '#1D1D1D',
     borderRadius: 15,
-    marginTop: 30,
+    marginTop: height * 0.03,
     flexDirection: 'row',
-    paddingLeft: 29,
+    paddingLeft: width * 0.07,
     alignItems: 'center',
   },
   nestedRectangle: {
-    width: 60,
-    height: 80,
+    width: width * 0.17,
+    height: height * 0.12,
     backgroundColor: '#575757',
-    borderTopLeftRadius: 5,
-    borderTopRightRadius: 5,
-    borderBottomLeftRadius: 5,
-    borderBottomRightRadius: 5,
+    borderRadius: 5,
   },
   textContainer: {
-    width: 185,
-    height: 64,
-    marginLeft: 25,
+    flex: 1,
+    marginLeft: width * 0.06,
     justifyContent: 'center',
   },
   nestedTextOneF: {
     fontFamily: 'Inter',
-    fontSize: 14,
+    fontSize: width * 0.035,
     fontWeight: '600',
-    lineHeight: 20,
+    lineHeight: width * 0.05,
     color: '#FFFFFF',
     textAlign: 'left',
   },
   nestedTextTwo: {
     fontFamily: 'Inter',
-    fontSize: 12,
+    fontSize: width * 0.03,
     fontWeight: '500',
-    lineHeight: 18,
+    lineHeight: width * 0.045,
     textAlign: 'left',
     color: '#575757',
-    marginTop: 8,
+    marginTop: height * 0.01,
   },
   nestedTextOneI: {
     fontFamily: 'Inter',
-    fontSize: 14,
+    fontSize: width * 0.035,
     fontWeight: '600',
-    lineHeight: 20,
+    lineHeight: width * 0.05,
     textAlign: 'left',
     color: '#FFFFFF',
   },
   nestedTextTwoo: {
     fontFamily: 'Inter',
-    fontSize: 12,
+    fontSize: width * 0.03,
     fontWeight: '500',
-    lineHeight: 18,
+    lineHeight: width * 0.045,
     textAlign: 'left',
     color: '#575757',
-    marginTop: 8,
-    textAlign: 'left',
+    marginTop: height * 0.01,
   },
   buttonContainer: {
     borderRadius: 8,
     borderWidth: 1,
-    paddingVertical: 8,
-    paddingHorizontal: 14,
-    marginTop: 20,
+    paddingVertical: height * 0.009,
+    paddingHorizontal: width * 0.0,
+    marginTop: height * 0.08,
     justifyContent: 'center',
     alignItems: 'center',
-    width: 320,
-    height: 37,
+    width: width * 0.9,
   },
   buttonText: {
     color: '#0E0E0E',
     fontWeight: "600",
-    fontSize: 16,
+    fontSize: width * 0.045,
     textAlign: 'center',
   },
 });

@@ -1,7 +1,9 @@
 import React from 'react';
-import { SafeAreaView, StatusBar, View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
+import { SafeAreaView, StatusBar, View, Text, TouchableOpacity, Image, StyleSheet, Dimensions } from 'react-native';
 import Images from '../Styles/Images';
 import Colors from '../Styles/Colors';
+
+const { width, height } = Dimensions.get('window');
 
 const Splash = ({ navigation }) => {
   return (
@@ -20,7 +22,7 @@ const Splash = ({ navigation }) => {
             <Text style={styles.line}>mutual funds.{'\n'}</Text>
             <Text style={styles.lineSimple}>Simplified.</Text>
           </Text>
-          <Text style={styles.subtitle}>Web3 and transparent hassle-free DEFI investing option.</Text>
+          <Text style={styles.subtitle}>Web3 and transparent hassle-free{"\n"} DEFI investing option.</Text>
           <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('Onboard')}>
             <Text style={styles.buttonText}>Get Started</Text>
           </TouchableOpacity>
@@ -45,114 +47,113 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     position: 'absolute',
-    top: 445,  
-    left: 26,
-    width: 338,
-    height: 132,
+    top: height * 0.55,  
+    left: width * 0.07,
+    width: width * 0.9,
+    height: height * 0.25, // Increased height to accommodate text movement
   },
   title: {
     fontFamily: 'Inter',
-    fontSize: 28,
+    fontSize: width * 0.07,
     fontWeight: '600',
-    lineHeight: 33,
+    lineHeight: width * 0.08,
     letterSpacing: -0.02,
     textAlign: 'center',
     color: '#000000',
+    marginTop: height * 0.08, // Added margin to move the text down
   },
   line: {
     fontWeight: '600',
-    fontSize: 36,
-    lineHeight: 44,
+    fontSize: width * 0.09,
+    lineHeight: width * 0.11,
     letterSpacing: -0.02,
     textAlign: 'center',
     color: '#000000' ,
   },
   lineSimple: {
-    fontSize: 36,
+    fontSize: width * 0.09,
     fontWeight: '600',
-    lineHeight: 44,
+    lineHeight: width * 0.11,
     letterSpacing: -0.02,
     textAlign: 'center',
     color: '#000000' ,
-    marginBottom: 20,
+    marginBottom: height * 0.03,
   },
   subtitle: {
-    fontSize: 16,
+    fontSize: width * 0.04,
     fontWeight: '500',
-    lineHeight: 24,
+    lineHeight: width * 0.05,
     letterSpacing: -0.02,
     textAlign: 'center',
     color: '#000000',
-    marginTop: 25,
-    marginBottom: 20
+    marginTop: height * 0.03,
+    marginBottom: height * 0.03,
   },
   logoIcon: {
-    width: 550,
-    height: 500,
+    width: width * 1,
+    height: height * 0.8,
     position: 'absolute',
-    bottom: 20,
-    left: '83%',
-    transform: [{ translateX: -299 }],
+    bottom: height * 0.0,
+    left: width * 0.5,
+    transform: [{ translateX: -width * 0.5 }],
   },
   buttonContainer: {
     backgroundColor: '#000000',
-    borderRadius: 18,
-    width: 125,
-    height: 42,
+    borderRadius: width * 0.05,
+    width: width * 0.35,
+    height: height * 0.06,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 18,
+    marginTop: height * 0.02, // Increased margin to move the button down
   },
   buttonText: {
     color: '#FFFFFF',
-    fontWeight: 'bold',
-    fontSize: 16,
+    fontSize: width * 0.04,
     textAlign: 'center',
   },
   VectorLeft: {
     position: 'absolute',
-    width: 255.65,
-    height: 408.39,
-    top: -150,
-    left: -150,
-    transform: [{ rotate: '15deg' }],
+    width: width * 0.7,
+    height: height * 0.6,
+    top: -height * 0.2,
+    left: -width * 0.4,
+    transform: [{ rotate: '20deg' }],
   },
   EllipseRight: {
-    width: 76,
-    height: 76,
-    top: 0,
-    left: 340,
+    width: width * 0.2,
+    height: width * 0.4, // Adjusted to make it oval
+    top: -height * 0.1, 
+    left: width * 0.8,
     position: 'absolute',
-    transform: [{ rotate: '1deg' }],
+    transform: [{ rotate: '360deg' }], 
   },
   EllipseRound: {
-    width: 18,
-    height: 18,
-    top: 40,
-    left: 169,
+    width: width * 0.05,
+    height: width * 0.05,
+    top: height * 0.09,
+    left: width * 0.45,
     position: 'absolute',
     backgroundColor: '#FFD300',
-    borderRadius: 9,
+    borderRadius: width * 0.025,
   },
   EllipseRoundOne: {
-    width: 18,
-    height: 18,
-    top: 140,
-    left: 155,
+    width: width * 0.05,
+    height: width * 0.05,
+    top: height * 0.22,
+    left: width * 0.4,
     position: 'absolute',
     backgroundColor: '#FFD300',
-    borderRadius: 9,
+    borderRadius: width * 0.025,
   },
   EllipseRoundTwo: {
-    width: 18,
-    height: 18,
-    top: 249,
-    left: 49,
+    width: width * 0.05,
+    height: width * 0.05,
+    top: height * 0.38,
+    left: width * 0.10,
     position: 'absolute',
     backgroundColor: '#FFD300',
-    borderRadius: 9,
+    borderRadius: width * 0.025,
   },
-
 });
 
 export default Splash;
