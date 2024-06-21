@@ -56,8 +56,8 @@ const HomeDashboard = ({ navigation }) => {
                             <Text style={styles.subHeaderText}>Explore</Text>
                         </LinearGradient>
                         <Text style={styles.subHeaderTextOne} onPress={() => navigation.navigate('HomeMarket')}>Markets</Text>
-                        <Text style={styles.subHeaderTextTwo}>Portfolio</Text>
-                        <Text style={styles.subHeaderTextThree} onPress={() => navigation.navigate('HomeDashboard')}>More</Text>
+                        {/* <Text style={styles.subHeaderTextTwo}>Portfolio</Text> */}
+                        <Text style={styles.subHeaderTextThree}>More</Text>
                     </View>
 
                     {/* Horizontal Scrollable Row */}
@@ -74,7 +74,7 @@ const HomeDashboard = ({ navigation }) => {
                                 source={Images.wallet}
                                 style={styles.smallRectangleImage}
                             />
-                            <Text style={styles.smallRectangleText}onPress={() => navigation.navigate('DashboardDeposit')}>Depoist</Text>
+                            <Text style={styles.smallRectangleText} onPress={() => navigation.navigate('DashboardDeposit')}>Depoist</Text>
                         </View>
                         <View style={styles.smallRectangle}>
                             <Image
@@ -107,7 +107,7 @@ const HomeDashboard = ({ navigation }) => {
 
 
 
-                         <View style={styles.amountContainerInv}>
+                        <View style={styles.amountContainerInv}>
                             <Text style={styles.currentValueAmountInv}>Invested</Text>
                             <Text style={styles.gainsAmountInv}>$ 18,500</Text>
                         </View>
@@ -115,9 +115,9 @@ const HomeDashboard = ({ navigation }) => {
                         <View style={styles.amountContainerGain}>
                             <Text style={[styles.currentValueAmountGain, { textAlign: 'left' }]}>Gains</Text>
                             <Text style={[styles.gainsAmount, { textAlign: 'right' }]}>+ $ 1,500</Text>
-                        </View> 
-                        
-                       
+                        </View>
+
+
                     </View>
                     <View style={styles.grayRectangleRow}>
                         <View style={styles.grayRectangleSmaller}>
@@ -159,31 +159,23 @@ const HomeDashboard = ({ navigation }) => {
                         style={styles.flatListContainer}
                         renderItem={({ item }) => (
                             <View style={styles.scrollableRectangle}>
-                                <View style={styles.smallrect}>
-                                    <Text style={styles.rectangleTitle}>{item.title}</Text>
-                                </View>
+                                <View style={styles.smallrect}></View>
+                                <Text style={styles.rectangleTitle}>{item.title}</Text>
 
                                 <Text style={styles.rectangleDescription}>{item.description}</Text>
 
-                                <View style={styles.check}>
-                                    <Image
-                                        source={item.image}
-                                        style={styles.percentageImage}
-                                    />
+                                <View style={styles.inceptionContainer}>
+                                    <Image source={item.VectorUp} style={styles.percentageImage} />
                                     <Text style={styles.incep}>{item.sinceInception}</Text>
                                 </View>
 
-                                <View style={styles.checktwo}>
-                                    <Image
-                                        source={item.image}
-                                        style={styles.percentageImage}
-                                    />
+                                <View style={styles.returnsContainer}>
                                     <Text style={styles.milli}>{item.returns}</Text>
+                                    <Image source={item.image} style={styles.percentageImage} />
                                 </View>
                             </View>
                         )}
                     />
-
                     <View style={{ paddingBottom: screenHeight * 0.15 }}></View>
                 </View>
             </ScrollView>
@@ -427,7 +419,7 @@ const styles = StyleSheet.create({
         lineHeight: screenWidth * 0.05,
         textAlign: "left",
         color: "#12B76A",
-        top:screenHeight * 0.1,
+        top: screenHeight * 0.1,
     },
     gainsAmountInv: {
         fontFamily: "Inter",
@@ -606,8 +598,8 @@ const styles = StyleSheet.create({
     },
     rectangleTitle: {
         fontFamily: 'Inter',
-        fontSize: screenWidth * 0.04,
-        fontWeight: '500',
+        fontSize: screenWidth * 0.03,
+        fontWeight: '400',
         color: '#FFFFFF',
         marginBottom: screenHeight * 0.01,
     },
@@ -619,25 +611,30 @@ const styles = StyleSheet.create({
         marginBottom: screenHeight * 0.02,
     },
     smallrect: {
-        width: screenWidth * 0.09,
+        width: screenWidth * 0.03,
         height: screenHeight * 0.03,
         borderRadius: 4,
-        backgroundColor: "white",
+        color: "white",
         justifyContent: 'left',
-        alignItems: 'left',
-        marginBottom: screenHeight * 0.02,
+        marginBottom: screenHeight * 0.01,
+        left: screenWidth * 0.01,
+        top:screenWidth * 0.02
     },
     incep: {
         fontFamily: "Inter",
         fontSize: screenWidth * 0.03,
         fontWeight: '500',
         color: "#575757",
+        left: screenWidth * -0.14,
+        top:screenWidth * -0.02
     },
     milli: {
         fontFamily: "Inter",
         fontSize: screenWidth * 0.03,
         fontWeight: '500',
         color: "#575757",
+        right: screenWidth * -0.18,
+        top:screenWidth * -0.05
     },
     check: {
         flexDirection: 'row',
@@ -649,10 +646,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     percentageImage: {
-        width: screenWidth * 0.05,
-        height: screenHeight * 0.03,
-        marginRight: screenWidth * 0.01,
+        width: screenWidth * 0.02,
+        height: screenHeight * 0.02,
+        marginRight: screenWidth * 0.00,
     },
+    inceptionContainer: {
+        alignItems: 'center',
+        marginTop: 10,
+      },
 });
 
 export default HomeDashboard;

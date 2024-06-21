@@ -36,7 +36,7 @@ const HomeMarket = ({ navigation }) => {
               <Text style={styles.subHeaderText}>Explore</Text>
             </LinearGradient>
             <Text style={styles.subHeaderTextOne}>Markets</Text>
-            <Text style={styles.subHeaderTextTwo}>Portfolio</Text>
+            {/* <Text style={styles.subHeaderTextTwo}>Portfolio</Text> */}
             <Text style={styles.subHeaderTextThree} onPress={() => navigation.navigate('HomeDashboard')}>More</Text>
           </View>
 
@@ -67,10 +67,10 @@ const HomeMarket = ({ navigation }) => {
                 <Text style={styles.tableCellText}>25,652.52</Text>
                 <View style={styles.tablePercentageContainer}>
                   <Image
-                    source={index % 2 === 0 ? Images.Vectordown : Images.VectorUp}
+                    source={index < 5 ? Images.Vectordown : Images.VectorUp}
                     style={styles.percentageImage}
                   />
-                  <Text style={index % 2 === 0 ? styles.tableCellTextRed : styles.tableCellTextGreen}>
+                  <Text style={index < 5 ? styles.tableCellTextRed : styles.tableCellTextGreen}>
                     0.65%
                   </Text>
                 </View>

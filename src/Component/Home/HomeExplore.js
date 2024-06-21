@@ -36,7 +36,7 @@ const HomeExplore = ({ navigation }) => {
               <Text style={styles.subHeaderText}>Explore</Text>
             </LinearGradient>
             <Text style={styles.subHeaderTextOne} onPress={() => navigation.navigate('HomeMarket')}>Markets</Text>
-            <Text style={styles.subHeaderTextTwo}>Portfolio</Text>
+            {/* <Text style={styles.subHeaderTextTwo}>Portfolio</Text> */}
             <Text style={styles.subHeaderTextThree}>More</Text>
           </View>
 

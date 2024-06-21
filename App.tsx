@@ -7,7 +7,7 @@ import SignUp from './src/Component/SignUp';
 import SignIn from './src/Component/SignIn';
 import HomeExplore from './src/Component/Home/HomeExplore';
 import HomeMarket from './src/Component/Home/HomeMarket';
-
+import HomeDashboard from './src/Component/Home/HomeDashboard';
 const Stack = createStackNavigator();
 
 function App() {
@@ -20,6 +20,7 @@ function App() {
         <Stack.Screen name="SignIn" component={SignIn} options={{ headerShown: false }} />
         <Stack.Screen name="HomeExplore" component={HomeExplore} options={{ headerShown: false }} />
         <Stack.Screen name="HomeMarket" component={HomeMarket} options={{ headerShown: false }} />
+        <Stack.Screen name="HomeDashboard" component={HomeDashboard} options={{ headerShown: false }} />
 
       </Stack.Navigator>
     </NavigationContainer>
